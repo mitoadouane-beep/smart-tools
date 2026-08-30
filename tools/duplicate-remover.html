@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Duplicate Remover | Smart Tools</title>
+
+    <meta name="description"
+          content="أداة مجانية لحذف الأسطر المكررة من النص.">
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>🛠️ Smart Tools</h1>
+
+    <p>أدوات ذكية ومجانية للجميع</p>
+
+</header>
+
+
+
+<section class="hero">
+
+    <h2>🧹 حذف الأسطر المكررة</h2>
+
+    <p>
+        احذف الأسطر المتكررة من أي نص بسهولة.
+    </p>
+
+</section>
+
+
+
+<section class="tools">
+
+    <div class="tools-title">
+
+        <h2>أدخل النص</h2>
+
+        <p>
+            الصق النص الذي يحتوي على أسطر مكررة
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <textarea
+            id="textInput"
+            placeholder="الصق النص هنا..."></textarea>
+
+
+        <button onclick="removeDuplicates()">
+            🧹 حذف التكرار
+        </button>
+
+
+        <br><br>
+
+
+        <button onclick="copyResult()">
+            📋 نسخ النتيجة
+        </button>
+
+
+        <div
+            class="result"
+            id="result">
+
+            النتيجة ستظهر هنا
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<footer>
+
+    <p>
+        © 2026 Smart Tools
+    </p>
+
+    <p>
+        أدوات رقمية مجانية وسريعة
+    </p>
+
+</footer>
+
+
+
+<script>
+
+function removeDuplicates() {
+
+    const text =
+        document.getElementById("textInput").value;
+
+
+    const lines =
+        text
+        .split("\n")
+        .map(function(line) {
+            return line.trim();
+        })
+        .filter(function(line) {
+            return line !== "";
+        });
+
+
+    const uniqueLines =
+        [...new Set(lines)];
+
+
+    document.getElementById("result").innerText =
+        uniqueLines.join("\n");
+
+}
+
+
+function copyResult() {
+
+    const result =
+        document.getElementById("result").innerText;
+
+
+    if (
+        result === "" ||
+        result === "النتيجة ستظهر هنا"
+    ) {
+
+        alert("أنشئ النتيجة أولاً.");
+
+        return;
+
+    }
+
+
+    navigator.clipboard.writeText(result);
+
+    alert("تم نسخ النتيجة ✅");
+
+}
+
+</script>
+
+
+</body>
+
+</html>
