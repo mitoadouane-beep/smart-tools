@@ -29,7 +29,15 @@
 
 </header>
 
+<div class="search-box">
 
+    <input
+        type="search"
+        id="toolSearch"
+        placeholder="🔍 ابحث عن أداة..."
+        oninput="searchTools()">
+
+</div>
 
 <section class="hero">
 
@@ -61,7 +69,33 @@
 
     </div>
 
+<div class="filters">
 
+    <button
+        class="filter-btn active"
+        onclick="filterTools('all', this)">
+        الكل
+    </button>
+
+    <button
+        class="filter-btn"
+        onclick="filterTools('text', this)">
+        🔤 النصوص
+    </button>
+
+    <button
+        class="filter-btn"
+        onclick="filterTools('money', this)">
+        💰 المال
+    </button>
+
+    <button
+        class="filter-btn"
+        onclick="filterTools('creator', this)">
+        📱 صناع المحتوى
+    </button>
+
+</div>
 
     <div class="grid">
 
@@ -69,8 +103,7 @@
 
         <!-- عداد الكلمات -->
 
-        <div class="card">
-
+<div class="card" data-category="text">
             <div class="icon">
                 🔤
             </div>
@@ -100,14 +133,19 @@
             </div>
 
         </div>
+<div
+    id="noResults"
+    class="no-results">
 
+    🔍 لم نجد أداة بهذا الاسم.
+
+</div>
 
 
 
         <!-- حاسبة الربح -->
 
-        <div class="card">
-
+      <div class="card" data-category="money">
             <div class="icon">
                 💰
             </div>
@@ -146,8 +184,7 @@
 
 <!-- حاسبة الخصم -->
 
-<div class="card">
-
+<div class="card" data-category="money">
     <div class="icon">
         💸
     </div>
@@ -180,8 +217,7 @@
 
 <!-- حاسبة هامش الربح -->
 
-<div class="card">
-
+<div class="card" data-category="money">
     <div class="icon">
         📈
     </div>
@@ -213,7 +249,7 @@
 </div>
         <!-- مولد أسماء المنتجات -->
 
-        <div class="card">
+      <div class="card" data-category="creator">
 
             <div class="icon">
                 🏷️
@@ -241,7 +277,7 @@
                 id="nameResults">
             </div><!-- منظف النصوص -->
 
-<div class="card">
+<div class="card" data-category="text">
 
     <div class="icon">
         🧹
@@ -311,7 +347,7 @@
 
     </div><!-- محوّل حالة الأحرف -->
 
-<div class="card">
+<div class="card" data-category="text">
 
     <div class="icon">
         🔤
