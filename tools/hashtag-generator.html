@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Hashtag Generator | Smart Tools</title>
+
+    <meta name="description"
+          content="مولد هاشتاغات مجاني بالعربية والفرنسية والإنجليزية لتيك توك وإنستغرام.">
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>🛠️ Smart Tools</h1>
+
+    <p>أدوات ذكية ومجانية للجميع</p>
+
+</header>
+
+
+<section class="hero">
+
+    <h2>#️⃣ مولّد الهاشتاغات</h2>
+
+    <p>
+        أنشئ هاشتاغات مناسبة لمحتواك بسرعة.
+    </p>
+
+</section>
+
+
+<section class="tools">
+
+    <div class="tools-title">
+
+        <h2>أدخل موضوع المحتوى</h2>
+
+        <p>
+            مثال: طبخ جزائري، سفر، رياضة، منتجات رقمية...
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <input
+            type="text"
+            id="topic"
+            placeholder="اكتب موضوعك هنا...">
+
+
+        <button onclick="generateHashtags()">
+            #️⃣ إنشاء الهاشتاغات
+        </button>
+
+
+        <div
+            class="result"
+            id="hashtagResult">
+
+            الهاشتاغات ستظهر هنا
+
+        </div>
+
+
+        <br>
+
+
+        <button onclick="copyHashtags()">
+            📋 نسخ الهاشتاغات
+        </button>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Smart Tools
+    </p>
+
+    <p>
+        أدوات رقمية مجانية وسريعة
+    </p>
+
+</footer>
+
+
+<script>
+
+function generateHashtags() {
+
+    const topic =
+        document.getElementById("topic").value.trim();
+
+
+    const result =
+        document.getElementById("hashtagResult");
+
+
+    if (topic === "") {
+
+        result.innerText =
+            "⚠️ اكتب موضوع المحتوى أولاً.";
+
+        return;
+
+    }
+
+
+    const cleanTopic =
+        topic
+        .replace(/\s+/g, "_")
+        .replace(/#/g, "");
+
+
+    const hashtags = [
+
+        "#" + cleanTopic,
+
+        "#" + cleanTopic + "_محتوى",
+
+        "#" + cleanTopic + "_تيك_توك",
+
+        "#" + cleanTopic + "_انستغرام",
+
+        "#محتوى",
+
+        "#تيك_توك",
+
+        "#انستغرام",
+
+        "#اكسبلور",
+
+        "#ترند",
+
+        "#صناع_المحتوى",
+
+        "#TikTok",
+
+        "#Instagram",
+
+        "#ForYou",
+
+        "#FYP",
+
+        "#" + cleanTopic + "Content",
+
+        "#" + cleanTopic + "TikTok",
+
+        "#" + cleanTopic + "Instagram",
+
+        "#Contenu",
+
+        "#CreateurDeContenu",
+
+        "#Tendance"
+
+    ];
+
+
+    result.innerText =
+        hashtags.join(" ");
+
+}
+
+
+function copyHashtags() {
+
+    const result =
+        document.getElementById("hashtagResult").innerText;
+
+
+    if (
+        result === "" ||
+        result === "الهاشتاغات ستظهر هنا"
+    ) {
+
+        alert("أنشئ الهاشتاغات أولاً.");
+
+        return;
+
+    }
+
+
+    navigator.clipboard.writeText(result);
+
+    alert("تم نسخ الهاشتاغات ✅");
+
+}
+
+</script>
+
+
+</body>
+
+</html>
