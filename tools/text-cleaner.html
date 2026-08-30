@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Text Cleaner | Smart Tools</title>
+
+    <meta name="description"
+          content="أداة مجانية لتنظيف النص وإزالة المسافات والأسطر الزائدة.">
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>🛠️ Smart Tools</h1>
+
+    <p>أدوات ذكية ومجانية للجميع</p>
+
+</header>
+
+
+
+<section class="hero">
+
+    <h2>🧹 منظف النصوص</h2>
+
+    <p>
+        نظّف النص من المسافات والأسطر الزائدة بسهولة.
+    </p>
+
+</section>
+
+
+
+<section class="tools">
+
+    <div class="tools-title">
+
+        <h2>أدخل النص</h2>
+
+        <p>
+            الصق النص الذي تريد تنظيفه
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <textarea
+            id="textInput"
+            placeholder="الصق النص هنا..."></textarea>
+
+
+        <button onclick="cleanText()">
+            🧹 تنظيف النص
+        </button>
+
+
+        <br><br>
+
+
+        <button onclick="copyResult()">
+            📋 نسخ النتيجة
+        </button>
+
+
+        <div
+            class="result"
+            id="result">
+
+            النتيجة ستظهر هنا
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<footer>
+
+    <p>
+        © 2026 Smart Tools
+    </p>
+
+    <p>
+        أدوات رقمية مجانية وسريعة
+    </p>
+
+</footer>
+
+
+
+<script>
+
+function cleanText() {
+
+    const text =
+        document.getElementById("textInput").value;
+
+
+    const cleaned =
+        text
+        .split("\n")
+        .map(function(line) {
+            return line.trim();
+        })
+        .filter(function(line) {
+            return line !== "";
+        })
+        .join("\n");
+
+
+    document.getElementById("result").innerText =
+        cleaned;
+
+}
+
+
+function copyResult() {
+
+    const result =
+        document.getElementById("result").innerText;
+
+
+    if (
+        result === "" ||
+        result === "النتيجة ستظهر هنا"
+    ) {
+
+        alert("نظّف النص أولاً.");
+
+        return;
+
+    }
+
+
+    navigator.clipboard.writeText(result);
+
+    alert("تم نسخ النتيجة ✅");
+
+}
+
+</script>
+
+
+</body>
+
+</html>
