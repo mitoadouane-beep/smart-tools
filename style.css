@@ -772,3 +772,265 @@ footer p {
     }
 
 }
+/* =========================================
+   SMART TOOLS - CLEAN FLAT DESIGN
+========================================= */
+
+body {
+    background:
+        radial-gradient(circle at 10% 10%, rgba(99,102,241,.12), transparent 25%),
+        radial-gradient(circle at 90% 20%, rgba(168,85,247,.10), transparent 25%),
+        linear-gradient(135deg, #0b1220, #111827);
+    color: #f8fafc;
+}
+
+
+/* الهيدر أصغر ومرتب */
+
+header {
+    padding: 22px 20px;
+    background: rgba(15,23,42,.92);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    box-shadow: none;
+}
+
+header h1 {
+    font-size: 29px;
+    letter-spacing: .5px;
+}
+
+header p {
+    font-size: 14px;
+}
+
+
+/* الواجهة الرئيسية */
+
+.hero {
+    padding: 55px 20px 35px;
+    max-width: 900px;
+}
+
+.hero h2 {
+    font-size: 38px;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* البحث */
+
+.search-box {
+    max-width: 560px;
+    margin: 25px auto 0;
+}
+
+.search-box input {
+    padding: 14px 18px;
+    border-radius: 10px;
+    background: #182235;
+    border: 1px solid #29364d;
+    box-shadow: none;
+    font-size: 15px;
+}
+
+
+/* القسم */
+
+.tools {
+    max-width: 1100px;
+    padding: 25px 20px 60px;
+}
+
+.tools-title {
+    margin-bottom: 25px;
+}
+
+.tools-title h2 {
+    font-size: 26px;
+}
+
+.tools-title p {
+    font-size: 14px;
+}
+
+
+/* التصنيفات */
+
+.filters {
+    gap: 8px;
+    margin-bottom: 28px;
+}
+
+.filter-btn {
+    padding: 9px 15px;
+    border-radius: 8px;
+    background: #182235;
+    border: 1px solid #29364d;
+    font-size: 14px;
+}
+
+.filter-btn.active {
+    background: #4f46e5;
+    box-shadow: none;
+}
+
+
+/* البطاقات */
+
+.grid {
+    gap: 16px;
+}
+
+.card {
+    padding: 22px;
+    border-radius: 12px;
+    background: #151f30;
+    border: 1px solid #263349;
+    box-shadow: none;
+    backdrop-filter: none;
+    transition: transform .2s ease, border-color .2s ease;
+}
+
+.card::before {
+    display: none;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: #4f46e5;
+    box-shadow: none;
+}
+
+.card h3 {
+    font-size: 19px;
+    margin: 10px 0 7px;
+}
+
+.card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #aebbd0;
+}
+
+
+/* الأيقونات */
+
+.icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    font-size: 22px;
+    background: #202b42;
+    border: 1px solid #303d55;
+}
+
+
+/* الأزرار */
+
+.card a {
+    padding: 11px !important;
+    border-radius: 8px !important;
+    font-size: 14px;
+}
+
+
+/* الخانات */
+
+input,
+textarea {
+    padding: 13px 15px;
+    border-radius: 9px;
+    background: #151f30;
+    border: 1px solid #2b3950;
+    font-size: 15px;
+}
+
+textarea {
+    min-height: 150px;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #6366f1;
+    box-shadow: none;
+}
+
+
+/* النتيجة */
+
+.result {
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 9px;
+    background: #0f172a;
+    border: 1px solid #263349;
+    font-size: 14px;
+}
+
+
+/* الفوتر */
+
+footer {
+    padding: 30px 20px;
+    background: #080e19;
+    border-top: 1px solid #1d293b;
+}
+
+footer p {
+    font-size: 13px;
+}
+
+
+/* الهاتف */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 18px 15px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    .hero {
+        padding: 40px 15px 25px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    .tools {
+        padding: 20px 15px 45px;
+    }
+
+    .grid {
+        gap: 12px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+}
+.hero h2 {
+    position: relative;
+    display: inline-block;
+}
+
+.hero h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 3px;
+    margin: 12px auto 0;
+    border-radius: 5px;
+    background: #6366f1;
+}
