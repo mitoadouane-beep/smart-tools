@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Tools - أدوات مجانية</title>
+
+    <meta name="description"
+        content="Smart Tools - مجموعة من الأدوات الرقمية المجانية والسريعة.">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #1f2937;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: #d1d5db;
+        }
+
+        .hero {
+            background: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #6b7280;
+            font-size: 18px;
+        }
+
+        .tools {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .tools-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .tools-title h2 {
+            font-size: 30px;
+        }
+
+        .tools-title p {
+            color: #6b7280;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+        }
+
+        .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        textarea,
+        input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        textarea:focus,
+        input:focus {
+            border-color: #2563eb;
+        }
+
+        button {
+            width: 100%;
+            border: none;
+            padding: 13px;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f3f4f6;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .name-results {
+            margin-top: 15px;
+        }
+
+        .name-item {
+            background: #f3f4f6;
+            padding: 10px;
+            border-radius: 7px;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            background: #111827;
+            color: #d1d5db;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 600px) {
+
+            .hero h2 {
+                font-size: 29px;
+            }
+
+            header h1 {
+                font-size: 27px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<header>
+
+    <h1>🛠️ Smart Tools</h1>
+
+    <p>
+        أدوات رقمية مجانية وسريعة
+    </p>
+
+</header>
+
+
+<section class="hero">
+
+    <h2>
+        أدوات بسيطة تساعدك يوميًا 🚀
+    </h2>
+
+    <p>
+        استخدم أدواتنا المجانية مباشرة من المتصفح
+        بدون تسجيل وبدون تحميل برامج.
+    </p>
+
+</section>
+
+
+
+<section class="tools">
+
+    <div class="tools-title">
+
+        <h2>
+            أدواتنا
+        </h2>
+
+        <p>
+            اختر الأداة التي تحتاجها
+        </p>
+
+    </div>
+
+
+    <div class="grid">
+
+
+
+        <!-- أداة عداد الكلمات -->
+
+        <div class="card">
+
+            <div class="icon">
+                🔤
+            </div>
+
+            <h3>
+                عداد الكلمات والحروف
+            </h3>
+
+            <p>
+                احسب عدد الكلمات والحروف في النص بسرعة.
+            </p>
+
+            <textarea
+                id="textInput"
+                placeholder="اكتب أو الصق النص هنا...">
+            </textarea>
+
+            <button onclick="countText()">
+                احسب
+            </button>
+
+            <div
+                class="result"
+                id="textResult">
+                الكلمات: 0 | الحروف: 0
+            </div>
+
+        </div>
+
+
+
+
+        <!-- أداة حاسبة الربح -->
+
+        <div class="card">
+
+            <div class="icon">
+                💰
+            </div>
+
+            <h3>
+                حاسبة السعر والربح
+            </h3>
+
+            <p>
+                احسب ربحك من بيع منتجك.
+            </p>
+
+            <input
+                type="number"
+                id="cost"
+                placeholder="تكلفة المنتج">
+
+            <input
+                type="number"
+                id="price"
+                placeholder="سعر البيع">
+
+            <button onclick="calculateProfit()">
+                احسب الربح
+            </button>
+
+            <div
+                class="result"
+                id="profitResult">
+                الربح: 0
+            </div>
+
+        </div>
+
+
+
+
+        <!-- مولد أسماء -->
+
+        <div class="card">
+
+            <div class="icon">
+                🏷️
+            </div>
+
+            <h3>
+                مولّد أسماء المنتجات
+            </h3>
+
+            <p>
+                اكتب نوع المنتج وسنقترح عليك أسماء.
+            </p>
+
+            <input
+                type="text"
+                id="productType"
+                placeholder="مثال: كتاب تلوين">
+
+            <button onclick="generateNames()">
+                إنشاء أسماء
+            </button>
+
+            <div
+                class="name-results"
+                id="nameResults">
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<footer>
+
+    <p>
+        © 2026 Smart Tools
+    </p>
+
+    <p>
+        أدوات رقمية مجانية للجميع
+    </p>
+
+</footer>
+
+
+
+<script>
+
+
+    // عداد الكلمات والحروف
+
+    function countText() {
+
+        const text =
+            document.getElementById("textInput").value;
+
+        const characters =
+            text.length;
+
+        const words =
+            text.trim() === ""
+                ? 0
+                : text.trim().split(/\s+/).length;
+
+        document.getElementById("textResult").innerText =
+            "الكلمات: " + words +
+            " | الحروف: " + characters;
+
+    }
+
+
+
+    // حاسبة الربح
+
+    function calculateProfit() {
+
+        const cost =
+            parseFloat(
+                document.getElementById("cost").value
+            ) || 0;
+
+        const price =
+            parseFloat(
+                document.getElementById("price").value
+            ) || 0;
+
+        const profit =
+            price - cost;
+
+        document.getElementById("profitResult").innerText =
+            "الربح: " + profit.toFixed(2);
+
+    }
+
+
+
+    // مولد أسماء المنتجات
+
+    function generateNames() {
+
+        const type =
+            document.getElementById("productType").value.trim();
+
+        if (type === "") {
+
+            document.getElementById("nameResults").innerHTML =
+                "<div class='name-item'>اكتب نوع المنتج أولاً.</div>";
+
+            return;
+
+        }
+
+
+        const names = [
+
+            "Smart " + type,
+
+            "Pro " + type,
+
+            "Creative " + type,
+
+            "Ultimate " + type,
+
+            "Easy " + type,
+
+            "Premium " + type,
+
+            "Magic " + type,
+
+            "Digital " + type
+
+        ];
+
+
+        let html = "";
+
+        names.forEach(function(name) {
+
+            html +=
+                "<div class='name-item'>" +
+                name +
+                "</div>";
+
+        });
+
+
+        document.getElementById("nameResults").innerHTML =
+            html;
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
