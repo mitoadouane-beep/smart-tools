@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Bio Generator | Smart Tools</title>
+
+    <meta name="description"
+          content="مولد Bio مجاني لإنشاء وصف احترافي لحسابات TikTok وInstagram.">
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>🛠️ Smart Tools</h1>
+
+    <p>أدوات ذكية ومجانية للجميع</p>
+
+</header>
+
+
+
+<section class="hero">
+
+    <h2>📱 مولّد Bio</h2>
+
+    <p>
+        أنشئ وصفًا احترافيًا لحسابك على TikTok أو Instagram.
+    </p>
+
+</section>
+
+
+
+<section class="tools">
+
+    <div class="tools-title">
+
+        <h2>أنشئ Bio جديدًا</h2>
+
+        <p>
+            أدخل معلومات بسيطة وسنقترح لك عدة أوصاف.
+        </p>
+
+    </div>
+
+
+
+    <div class="card">
+
+        <input
+            type="text"
+            id="name"
+            placeholder="اسمك أو اسم الحساب">
+
+
+        <input
+            type="text"
+            id="niche"
+            placeholder="مجالك - مثال: الطبخ">
+
+
+        <input
+            type="text"
+            id="goal"
+            placeholder="هدفك - مثال: تعليم وصفات">
+
+
+        <button onclick="generateBio()">
+            ✨ إنشاء Bio
+        </button>
+
+
+        <div
+            class="name-results"
+            id="bioResults">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<footer>
+
+    <p>
+        © 2026 Smart Tools
+    </p>
+
+    <p>
+        أدوات رقمية مجانية وسريعة
+    </p>
+
+</footer>
+
+
+
+<script>
+
+function generateBio() {
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const niche =
+        document.getElementById("niche").value.trim();
+
+    const goal =
+        document.getElementById("goal").value.trim();
+
+
+    const results =
+        document.getElementById("bioResults");
+
+
+    if (
+        name === "" ||
+        niche === "" ||
+        goal === ""
+    ) {
+
+        results.innerHTML =
+            "<div class='name-item'>⚠️ املأ جميع الخانات أولاً.</div>";
+
+        return;
+
+    }
+
+
+    const bios = [
+
+        "✨ " + name +
+        " | " + niche +
+        " | أشارك " + goal +
+        " 🚀",
+
+        "🔥 " + niche +
+        " | محتوى مفيد وبسيط" +
+        " | تابعني للمزيد ✨",
+
+        "🎯 " + goal +
+        " | 💡 نصائح وأفكار في " +
+        niche +
+        " | تابعني 🚀",
+
+        "👋 أهلاً بك!" +
+        " أنا " + name +
+        " | " + niche +
+        " | " + goal,
+
+        "🚀 " + name +
+        " | " +
+        niche +
+        " | نصنع الفرق معًا ✨"
+
+    ];
+
+
+    results.innerHTML = "";
+
+
+    bios.forEach(function(bio) {
+
+        const item =
+            document.createElement("div");
+
+        item.className = "name-item";
+
+        item.innerText = bio;
+
+        item.style.cursor = "pointer";
+
+        item.title =
+            "اضغط لنسخ Bio";
+
+
+        item.onclick = function() {
+
+            navigator.clipboard.writeText(bio);
+
+            alert("تم نسخ Bio ✅");
+
+        };
+
+
+        results.appendChild(item);
+
+    });
+
+}
+
+</script>
+
+
+</body>
+
+</html>
