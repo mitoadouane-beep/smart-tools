@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Discount Calculator | Smart Tools</title>
+
+    <meta name="description"
+          content="حاسبة خصم مجانية لحساب السعر النهائي وقيمة الخصم.">
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>🛠️ Smart Tools</h1>
+
+    <p>أدوات ذكية ومجانية للجميع</p>
+
+</header>
+
+
+<section class="hero">
+
+    <h2>💰 حاسبة الخصم</h2>
+
+    <p>
+        احسب السعر بعد الخصم وقيمة المبلغ الذي وفرته.
+    </p>
+
+</section>
+
+
+<section class="tools">
+
+    <div class="tools-title">
+
+        <h2>احسب السعر النهائي</h2>
+
+        <p>
+            أدخل السعر ونسبة الخصم
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <input
+            type="number"
+            id="originalPrice"
+            placeholder="السعر الأصلي"
+            min="0"
+            step="0.01">
+
+
+        <input
+            type="number"
+            id="discountPercent"
+            placeholder="نسبة الخصم %"
+            min="0"
+            max="100"
+            step="0.01">
+
+
+        <button onclick="calculateDiscount()">
+            💰 احسب الخصم
+        </button>
+
+
+        <div
+            class="result"
+            id="discountResult">
+
+            أدخل البيانات ثم اضغط احسب
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Smart Tools
+    </p>
+
+    <p>
+        أدوات رقمية مجانية وسريعة
+    </p>
+
+</footer>
+
+
+<script>
+
+function calculateDiscount() {
+
+    const originalPrice =
+        parseFloat(
+            document.getElementById("originalPrice").value
+        );
+
+    const discountPercent =
+        parseFloat(
+            document.getElementById("discountPercent").value
+        );
+
+
+    if (
+        isNaN(originalPrice) ||
+        isNaN(discountPercent)
+    ) {
+
+        document.getElementById("discountResult").innerText =
+            "⚠️ أدخل السعر ونسبة الخصم.";
+
+        return;
+
+    }
+
+
+    if (
+        originalPrice < 0 ||
+        discountPercent < 0 ||
+        discountPercent > 100
+    ) {
+
+        document.getElementById("discountResult").innerText =
+            "⚠️ تأكد من صحة الأرقام.";
+
+        return;
+
+    }
+
+
+    const discountAmount =
+        originalPrice * (discountPercent / 100);
+
+
+    const finalPrice =
+        originalPrice - discountAmount;
+
+
+    document.getElementById("discountResult").innerHTML =
+
+        "السعر الأصلي: " +
+        originalPrice.toFixed(2) +
+
+        "<br>قيمة الخصم: " +
+        discountAmount.toFixed(2) +
+
+        "<br>السعر النهائي: " +
+        finalPrice.toFixed(2);
+
+}
+
+</script>
+
+
+</body>
+
+</html>
