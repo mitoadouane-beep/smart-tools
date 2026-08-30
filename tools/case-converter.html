@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Case Converter | Smart Tools</title>
+
+    <meta name="description"
+          content="تحويل النص إلى أحرف كبيرة أو صغيرة بسهولة.">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+
+    <h1>🛠️ Smart Tools</h1>
+
+    <p>أدوات ذكية ومجانية للجميع</p>
+
+</header>
+
+
+<section class="hero">
+
+    <h2>🔤 محوّل حالة الأحرف</h2>
+
+    <p>
+        حوّل النص إلى أحرف كبيرة أو صغيرة بضغطة واحدة.
+    </p>
+
+</section>
+
+
+<section class="tools">
+
+    <div class="tools-title">
+
+        <h2>اكتب النص</h2>
+
+        <p>
+            أدخل النص الذي تريد تحويله
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <textarea
+            id="textInput"
+            placeholder="اكتب النص هنا..."></textarea>
+
+
+        <button onclick="toUpperCaseText()">
+            🔠 أحرف كبيرة
+        </button>
+
+        <br><br>
+
+        <button onclick="toLowerCaseText()">
+            🔡 أحرف صغيرة
+        </button>
+
+        <br><br>
+
+        <button onclick="capitalizeText()">
+            ✨ أول حرف كبير
+        </button>
+
+
+        <div
+            class="result"
+            id="result">
+
+            النتيجة ستظهر هنا
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Smart Tools
+    </p>
+
+    <p>
+        أدوات رقمية مجانية وسريعة
+    </p>
+
+</footer>
+
+
+<script>
+
+function toUpperCaseText() {
+
+    const text =
+        document.getElementById("textInput").value;
+
+    document.getElementById("result").innerText =
+        text.toUpperCase();
+
+}
+
+
+function toLowerCaseText() {
+
+    const text =
+        document.getElementById("textInput").value;
+
+    document.getElementById("result").innerText =
+        text.toLowerCase();
+
+}
+
+
+function capitalizeText() {
+
+    const text =
+        document.getElementById("textInput").value;
+
+    const result =
+        text
+        .toLowerCase()
+        .replace(/\b\w/g, function(letter) {
+            return letter.toUpperCase();
+        });
+
+    document.getElementById("result").innerText =
+        result;
+
+}
+
+</script>
+
+
+</body>
+
+</html>
