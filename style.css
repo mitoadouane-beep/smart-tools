@@ -30,16 +30,48 @@ body {
 ========================= */
 
 header {
-    background: rgba(255, 255, 255, 0.96);
-    border-bottom: 1px solid #e8ebf2;
-    padding: 18px 6%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
+   <header>
+
+    <div class="navbar">
+
+        <a href="index.html" class="logo">
+            🛠️ Smart Tools
+        </a>
+
+
+        <nav>
+
+            <a href="index.html">
+                الرئيسية
+            </a>
+
+            <a href="#tools">
+                الأدوات
+            </a>
+
+            <a href="#about">
+                عن الموقع
+            </a>
+
+        </nav>
+
+    </div>
+
+
+    <div class="hero-intro">
+
+        <h1>
+            أدوات ذكية لإنجاز مهامك بسرعة
+        </h1>
+
+        <p>
+            مجموعة أدوات مجانية وبسيطة للنصوص،
+            المال، وصناعة المحتوى.
+        </p>
+
+    </div>
+
+</header>
 
 header h1 {
     font-size: 25px;
